@@ -1,51 +1,59 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-5">
-        <h1 class="page-title">Login</h1>
-        <form [formGroup]="loginForm" (ngSubmit) = "login()">
-          <div class="form-group">
-            <div *ngIf="notify" class="alert alert-success">
-              {{ notify }}
-            </div>
-            <div *ngIf="errors.length > 0" class="alert alert-danger">
-              <p *ngFor = "let error of errors">
-                  {{ error }}
-              </p>
-            </div>
-            <label for="email">Email</label>
-            <input type="email"
-                   class="form-control"
-                   formControlName="email">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center register">
+    <div class="registrationform">
+      <h1 class="page-title">Login</h1>
+      <form [formGroup]="loginForm" (ngSubmit) = "login()" class="form-horizontal">
+        <fieldset>
+        <div class="form-group">
+          <div *ngIf="notify" class="alert alert-success">
+            {{ notify }}
           </div>
-          <div *ngIf="isValidInput('email')"
-            class="alert alert-danger">
-            <div *ngIf="loginForm.controls['email'].errors.required">
-              Email is required.
-            </div>
-            <div *ngIf="loginForm.controls['email'].errors.pattern">
-              Must be a valid email format.
-            </div>
+          <div *ngIf="errors.length > 0" class="alert alert-danger">
+            <p *ngFor = "let error of errors">
+                {{ error }}
+            </p>
           </div>
+          <div class="col-lg-10" style="padding-top: 15px;">
+          <input type="email"
+                 class="form-control"
+                 formControlName="email"
+                 placeholder="Enter Email">
+          </div>
+        </div>
+        <div *ngIf="isValidInput('email')"
+          class="alert alert-danger">
+          <div *ngIf="loginForm.controls['email'].errors.required">
+            Email is required.
+          </div>
+          <div *ngIf="loginForm.controls['email'].errors.pattern">
+            Must be a valid email format.
+          </div>
+        </div>
 
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password"
-                   class="form-control"
-                   formControlName ="password">
+        <div class="form-group">
+          <div class="col-lg-10" style="padding-top: 15px;">
+          <input type="password"
+                 class="form-control"
+                 formControlName ="password"
+                 placeholder="Enter Password">
           </div>
-          <div *ngIf="isValidInput('password')"
-            class="alert alert-danger">
-            <div *ngIf="loginForm.controls['password'].errors.required">
-              Password is required.
-            </div>
+        </div>
+        <div *ngIf="isValidInput('password')"
+          class="alert alert-danger">
+          <div *ngIf="loginForm.controls['password'].errors.required">
+            Password is required.
           </div>
-          <button
-          [disabled]="!loginForm.valid"
-          type="submit" 
-          class="btn btn-warning"
-          >Sign In</button>
-        </form>
+        </div>
+        <div class="col-lg-10 col-lg-offset-2" style="padding-top: 30px; padding-bottom: 20px;">
+        <button
+        [disabled]="!loginForm.valid"
+        type="submit" 
+        class="btn btn-warning"
+        >Sign In</button>
       </div>
+      </fieldset>
+      </form>
     </div>
-    <h2>{{errorMessage}}</h2>
+  </div>
+  <h2>{{errorMessage}}</h2>
 </div>

@@ -90,10 +90,8 @@ export class CartComponent implements OnInit {
 		this.loadCart();
 		
 	}
-	cartInfo:any;
 	checkOut() {
 		let cart: any = JSON.parse(localStorage.getItem('cart'));
-		this.cartInfo = cart;
 		console.log(cart);
 		for(var i=0;i<cart.length;i++){
 			let item = JSON.parse(cart[i]);

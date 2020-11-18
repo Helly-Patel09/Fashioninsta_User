@@ -1,3 +1,27 @@
 .marge {
   margin-top: 1%
 }
+.marge {
+  margin-top: 1%
+}
+
+h1{
+  color:tan;
+}
+p{
+  font-size: large;
+  color:turquoise;
+  padding : 10px;
+  text-align: justify;
+}
+.register{
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+.registrationform {
+padding: 35px;
+background: rgba(0, 0, 0, 0.3);
+color: #FFF !important;
+margin-top: 30px;
+  margin-top: 30px;
+}
